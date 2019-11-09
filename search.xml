@@ -15,9 +15,8 @@
 </ol>
 <h3 id="二进制安装–适合离线"><a href="#二进制安装–适合离线" class="headerlink" title="二进制安装–适合离线"></a>二进制安装–适合离线</h3><ol>
 <li><p>uwsgi二进制文件准备</p>
-<p>方式一： 程序目录uwsgi下面包含该文件，可以直接使用。</p>
-<p>方式二：网络下载最新版本</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载地址：http://projects.unbit.it/downloads/uwsgi-latest.tar.gz</span><br><span class="line"></span><br><span class="line">linux系统下载: wget http://projects.unbit.it/downloads/uwsgi-latest.tar.gz</span><br></pre></td></tr></table></figure>
+<p>方式：网络下载最新版本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载地址：http://projects.unbit.it/downloads/uwsgi-latest.tar.gz</span><br><span class="line">   </span><br><span class="line">   linux系统下载: wget http://projects.unbit.it/downloads/uwsgi-latest.tar.gz</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>文件解压编译安装</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 解压安装包</span><br><span class="line">$ tar zxvf uwsgi-latest.tar.gz</span><br><span class="line"># 重命名为uwsgi(非必须)</span><br><span class="line">$ mv uwsgi-latest/ uwsgi</span><br><span class="line"># 进入uwsgi目录，编译安装</span><br><span class="line">$ cd uwsgi</span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
@@ -40,29 +39,78 @@
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>UWSGI</tag>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/11/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>Python环境安装</title>
+    <url>/2019/11/08/python/</url>
+    <content><![CDATA[<blockquote>
+<ol>
+<li><p>下载Python二进制文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载地址：https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz</span><br><span class="line">linux系统下载: wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将二进制文件上传到要安装服务器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SSH软件上传</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装–以下步骤都在要安装的服务器上操作</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. tar -zxvf Python-3.7.4.tgz # 解压安装包</span><br><span class="line">2. cd ./Python-3.7.4  # 进入解压后的目录</span><br><span class="line">3. ./configure --prefix=/usr/local/my_python_path #初始配置，--prefix指定安装目录</span><br><span class="line">4. make &amp;&amp; make install  # 编译源码 + 程序安装</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成，配置环境</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. 建立软连接到系统环境变量</span><br><span class="line">	ln -s /usr/local/my_python_path/bin/python3 /usr/bin/python3 </span><br><span class="line">2. pip 建立</span><br><span class="line">	ln -s /usr/local/my_python_path/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. python3 -V # 验证python3</span><br><span class="line">2. pip3 -V # 验证pip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新pip(非必须)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># python自带pip可能不是最新，可以更新</span><br><span class="line">pip3 install --upgrade pip</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="开启虚拟环境-非必须"><a href="#开启虚拟环境-非必须" class="headerlink" title="开启虚拟环境(非必须)"></a>开启虚拟环境(非必须)</h3><blockquote>
+<p>虚拟环境是指针对部署项目的一个单独的python环境（依赖包归该虚拟环境所有），其他项目的依赖不会对其产生影响。</p>
+<p>虚拟环境不是必须的，只有在多个python项目运行，且互相依赖的相同依赖包版本不一致时，才是必须的。</p>
+<ol>
+<li><p>初始化虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 进入想要生成虚拟环境的目录下 比如 ~/apps/model</span><br><span class="line"># 其中第一个venv是python生成虚拟环境的命令</span><br><span class="line"># 第二个venv是虚拟环境存放的目录，可以修改成其他名字，比如venv-model</span><br><span class="line">python3 -m venv venv</span><br><span class="line">python3 -m venv venv-model</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>激活虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 激活虚拟环境--linux系统</span><br><span class="line">source venv/bin/activate</span><br><span class="line"># 激活虚拟环境--windows系统</span><br><span class="line">venv/Scripts/activate.bat</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 在当前虚拟环境下，运行</span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>虚拟环境生成后，就是一个python的运行环境，操作与在系统中一样。</p>
+</blockquote>
+<h3 id="依赖包安装"><a href="#依赖包安装" class="headerlink" title="依赖包安装"></a>依赖包安装</h3><hr>
+<p>如果是在虚拟环境中运行项目，请激活虚拟环境后，在虚拟环境下操作，反之在当前系统下操作即可。</p>
+<h4 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> # 安装依赖包 -r 指定依赖文件</span><br><span class="line">1. pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h4><blockquote>
+<ol>
+<li><p>备份依赖包—可上网的开发环境</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 备份依赖关系</span><br><span class="line">1. pip3 freeze &gt; requirement.txt</span><br><span class="line"># 在线下载依赖包到指定目录</span><br><span class="line">2. pip3 download -d pack_directory -r requirements.txt</span><br><span class="line">	-d 指定依赖包保存目录</span><br><span class="line">	-r 指定依赖包汇总文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还原依赖包—离线服务器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 安装依赖包</span><br><span class="line">1. pip3 install --no-index --find-links=pack_directory -r requirements.txt</span><br><span class="line"> --no-index 禁止去网络下载</span><br><span class="line"> --find-links 指定去哪里寻找安装包，这里是安装包文件夹</span><br><span class="line"> -r 指定依赖包文件</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+</li>
+</ol>
+</blockquote>
 ]]></content>
+      <categories>
+        <category>环境安装</category>
+      </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
 </search>
