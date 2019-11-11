@@ -101,9 +101,9 @@
     <title>Docker环境安装</title>
     <url>/2019/11/09/docker/</url>
     <content><![CDATA[<p> Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。 </p>
-<p>本文介绍了Docker的简单安装部署，以及几个简单命令操作</p>
 <a id="more"></a>
 
+<p>本文介绍了Docker的简单安装部署，以及几个简单命令操作</p>
 <h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>不同的操作系统安装命令不一致</p>
 <ol>
 <li><p>centos命令</p>

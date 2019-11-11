@@ -5,9 +5,9 @@
   <subtitle>走在技术之路</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://franplk.github.io/"/>
   <updated>2019-11-11T02:26:50.424Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://franplk.github.io/</id>
   
   <author>
     <name>Franplk</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>pyinstaller程序打包与发布</title>
-    <link href="http://yoursite.com/2019/11/11/pyinstaller/"/>
-    <id>http://yoursite.com/2019/11/11/pyinstaller/</id>
+    <link href="https://franplk.github.io/2019/11/11/pyinstaller/"/>
+    <id>https://franplk.github.io/2019/11/11/pyinstaller/</id>
     <published>2019-11-11T01:36:27.000Z</published>
     <updated>2019-11-11T02:26:50.424Z</updated>
     
@@ -33,38 +33,37 @@
     
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+      <category term="Python" scheme="https://franplk.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Docker环境安装</title>
-    <link href="http://yoursite.com/2019/11/09/docker/"/>
-    <id>http://yoursite.com/2019/11/09/docker/</id>
+    <link href="https://franplk.github.io/2019/11/09/docker/"/>
+    <id>https://franplk.github.io/2019/11/09/docker/</id>
     <published>2019-11-09T08:50:51.000Z</published>
-    <updated>2019-11-11T02:30:16.751Z</updated>
+    <updated>2019-11-11T07:54:35.051Z</updated>
     
-    <content type="html"><![CDATA[<p> Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。 </p><p>本文介绍了Docker的简单安装部署，以及几个简单命令操作</p><a id="more"></a><h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>不同的操作系统安装命令不一致</p><ol><li><p>centos命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># -y 指定免交互安装</span><br><span class="line">$ sudo yum –y install docker-ce</span><br></pre></td></tr></table></figure></li><li><p>ubuntu命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装最新版Docker</span><br><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure></li></ol><h3 id="二进制安装-–-适用离线"><a href="#二进制安装-–-适用离线" class="headerlink" title="二进制安装 – 适用离线"></a>二进制安装 – 适用离线</h3><p>二进制安装方式适合服务器无法连接外网的环境。</p><ol><li><p>准备二进制文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">官网下载稳定版，根据操作系统选择适合的版本</span><br><span class="line">下载地址：https://download.docker.com/linux/static/stable/x86_64/</span><br></pre></td></tr></table></figure></li><li><p>解压文件并转移文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 解压文件</span><br><span class="line">$ tar –zxf docker-19.03.2.tgz</span><br><span class="line"># 移动文件</span><br><span class="line"># 将加压后文件夹的所有内容移动到某个系统环境变量下</span><br><span class="line"># 比如：/bin, usr/bin，usr/local/bin</span><br><span class="line">$ sudo cp docker/* /usr/bin/</span><br></pre></td></tr></table></figure></li><li><p>启动docker服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 启动Docker服务</span><br><span class="line"># &amp; 表示后台运行</span><br><span class="line">$ sudo dockerd &amp;</span><br></pre></td></tr></table></figure></li><li><p>验证安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 方式一：查看docker版本信息</span><br><span class="line">$ sudo docker version</span><br><span class="line"># 方式二：查看docker信息</span><br><span class="line">$ sudo docker info</span><br></pre></td></tr></table></figure></li></ol><h3 id="Docker基本操作"><a href="#Docker基本操作" class="headerlink" title="Docker基本操作"></a>Docker基本操作</h3><ol><li><p>应用启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 创建新容器---交互模式</span><br><span class="line"># 该方式用于改造镜像，生成新镜像（Dockerfile操作）</span><br><span class="line">$ docker run -it image_id /bin/bash</span><br><span class="line"></span><br><span class="line"># 创建新容器 --- 后台运行</span><br><span class="line"># 用于启动新的应用</span><br><span class="line"># -d 指定daemon模式</span><br><span class="line"># -p 指定映射端口</span><br><span class="line"># --name 指定新创建的容器的名称</span><br><span class="line">$ docker run -d -p po:pi --name c_name image_id</span><br></pre></td></tr></table></figure></li><li><p>应用查看</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 查看运行中的容器 -a 表示所有容器，包括停止的容器</span><br><span class="line">$ docker ps -a</span><br><span class="line"></span><br><span class="line"># 交互模式进入容器，可以做一些操作，比如查看日志等</span><br><span class="line"># container_id 容器的ID</span><br><span class="line"># command 进入后执行的命令，一般设置为 /bin/bash</span><br><span class="line">$ docker exec container_id command</span><br></pre></td></tr></table></figure></li><li><p>应用停止/恢复</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 应用停止</span><br><span class="line"># -t 指定等待多长时间(单位：s)后推出</span><br><span class="line">$ sudo docker stop -t 60 container_id</span><br><span class="line"></span><br><span class="line"># 应用恢复</span><br><span class="line">$ sudo docker restart container_id</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<p> Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。 </p><a id="more"></a><p>本文介绍了Docker的简单安装部署，以及几个简单命令操作</p><h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>不同的操作系统安装命令不一致</p><ol><li><p>centos命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># -y 指定免交互安装</span><br><span class="line">$ sudo yum –y install docker-ce</span><br></pre></td></tr></table></figure></li><li><p>ubuntu命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装最新版Docker</span><br><span class="line">$ sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure></li></ol><h3 id="二进制安装-–-适用离线"><a href="#二进制安装-–-适用离线" class="headerlink" title="二进制安装 – 适用离线"></a>二进制安装 – 适用离线</h3><p>二进制安装方式适合服务器无法连接外网的环境。</p><ol><li><p>准备二进制文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">官网下载稳定版，根据操作系统选择适合的版本</span><br><span class="line">下载地址：https://download.docker.com/linux/static/stable/x86_64/</span><br></pre></td></tr></table></figure></li><li><p>解压文件并转移文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 解压文件</span><br><span class="line">$ tar –zxf docker-19.03.2.tgz</span><br><span class="line"># 移动文件</span><br><span class="line"># 将加压后文件夹的所有内容移动到某个系统环境变量下</span><br><span class="line"># 比如：/bin, usr/bin，usr/local/bin</span><br><span class="line">$ sudo cp docker/* /usr/bin/</span><br></pre></td></tr></table></figure></li><li><p>启动docker服务</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 启动Docker服务</span><br><span class="line"># &amp; 表示后台运行</span><br><span class="line">$ sudo dockerd &amp;</span><br></pre></td></tr></table></figure></li><li><p>验证安装成功</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 方式一：查看docker版本信息</span><br><span class="line">$ sudo docker version</span><br><span class="line"># 方式二：查看docker信息</span><br><span class="line">$ sudo docker info</span><br></pre></td></tr></table></figure></li></ol><h3 id="Docker基本操作"><a href="#Docker基本操作" class="headerlink" title="Docker基本操作"></a>Docker基本操作</h3><ol><li><p>应用启动</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 创建新容器---交互模式</span><br><span class="line"># 该方式用于改造镜像，生成新镜像（Dockerfile操作）</span><br><span class="line">$ docker run -it image_id /bin/bash</span><br><span class="line"></span><br><span class="line"># 创建新容器 --- 后台运行</span><br><span class="line"># 用于启动新的应用</span><br><span class="line"># -d 指定daemon模式</span><br><span class="line"># -p 指定映射端口</span><br><span class="line"># --name 指定新创建的容器的名称</span><br><span class="line">$ docker run -d -p po:pi --name c_name image_id</span><br></pre></td></tr></table></figure></li><li><p>应用查看</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 查看运行中的容器 -a 表示所有容器，包括停止的容器</span><br><span class="line">$ docker ps -a</span><br><span class="line"></span><br><span class="line"># 交互模式进入容器，可以做一些操作，比如查看日志等</span><br><span class="line"># container_id 容器的ID</span><br><span class="line"># command 进入后执行的命令，一般设置为 /bin/bash</span><br><span class="line">$ docker exec container_id command</span><br></pre></td></tr></table></figure></li><li><p>应用停止/恢复</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 应用停止</span><br><span class="line"># -t 指定等待多长时间(单位：s)后推出</span><br><span class="line">$ sudo docker stop -t 60 container_id</span><br><span class="line"></span><br><span class="line"># 应用恢复</span><br><span class="line">$ sudo docker restart container_id</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
       &lt;p&gt; Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。 &lt;/p&gt;
-&lt;p&gt;本文介绍了Docker的简单安装部署，以及几个简单命令操作&lt;/p&gt;
     
     </summary>
     
     
-      <category term="环境安装" scheme="http://yoursite.com/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
+      <category term="环境安装" scheme="https://franplk.github.io/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
+      <category term="Docker" scheme="https://franplk.github.io/tags/Docker/"/>
     
   </entry>
   
   <entry>
     <title>uwsgi服务安装</title>
-    <link href="http://yoursite.com/2019/11/08/uwsgigi-server/"/>
-    <id>http://yoursite.com/2019/11/08/uwsgigi-server/</id>
+    <link href="https://franplk.github.io/2019/11/08/uwsgigi-server/"/>
+    <id>https://franplk.github.io/2019/11/08/uwsgigi-server/</id>
     <published>2019-11-08T12:50:51.000Z</published>
     <updated>2019-11-11T02:27:36.769Z</updated>
     
@@ -77,17 +76,17 @@
     </summary>
     
     
-      <category term="环境安装" scheme="http://yoursite.com/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
+      <category term="环境安装" scheme="https://franplk.github.io/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="UWSGI" scheme="http://yoursite.com/tags/UWSGI/"/>
+      <category term="UWSGI" scheme="https://franplk.github.io/tags/UWSGI/"/>
     
   </entry>
   
   <entry>
     <title>Python环境安装</title>
-    <link href="http://yoursite.com/2019/11/08/python/"/>
-    <id>http://yoursite.com/2019/11/08/python/</id>
+    <link href="https://franplk.github.io/2019/11/08/python/"/>
+    <id>https://franplk.github.io/2019/11/08/python/</id>
     <published>2019-11-08T09:50:51.000Z</published>
     <updated>2019-11-11T02:44:55.006Z</updated>
     
@@ -100,10 +99,10 @@
     </summary>
     
     
-      <category term="环境安装" scheme="http://yoursite.com/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
+      <category term="环境安装" scheme="https://franplk.github.io/categories/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+      <category term="Python" scheme="https://franplk.github.io/tags/Python/"/>
     
   </entry>
   
