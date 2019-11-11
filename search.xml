@@ -4,6 +4,8 @@
     <title>pyinstaller程序打包与发布</title>
     <url>/2019/11/11/pyinstaller/</url>
     <content><![CDATA[<p>该文档说明了如何使用 pyinstaller 将应用打包成可执行的exe文件</p>
+<a id="more"></a>
+
 <h3 id="Pyinstaller安装"><a href="#Pyinstaller安装" class="headerlink" title="Pyinstaller安装"></a>Pyinstaller安装</h3><blockquote>
 <ol>
 <li><p>使用pip进行安装</p>
@@ -98,7 +100,11 @@
   <entry>
     <title>Docker环境安装</title>
     <url>/2019/11/09/docker/</url>
-    <content><![CDATA[<h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>不同的操作系统安装命令不一致</p>
+    <content><![CDATA[<p> Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。 </p>
+<p>本文介绍了Docker的简单安装部署，以及几个简单命令操作</p>
+<a id="more"></a>
+
+<h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>不同的操作系统安装命令不一致</p>
 <ol>
 <li><p>centos命令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># -y 指定免交互安装</span><br><span class="line">$ sudo yum –y install docker-ce</span><br></pre></td></tr></table></figure>
@@ -148,6 +154,8 @@
     <title>uwsgi服务安装</title>
     <url>/2019/11/08/uwsgigi-server/</url>
     <content><![CDATA[<p>uwsgi是linux操作系统中，通过python编写的支持wsgi规范的python web服务器，。支持Flask/Django等编写的web程序，常用与Flask应用的生产部署。</p>
+<a id="more"></a>
+
 <h3 id="pip安装"><a href="#pip安装" class="headerlink" title="pip安装"></a>pip安装</h3><ol>
 <li><p>安装 python 提供的最新版 uwsgi</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 系统级安装--非虚拟环境下安装</span><br><span class="line">pip install uwsgi</span><br></pre></td></tr></table></figure>
