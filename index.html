@@ -236,9 +236,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-11 09:36:27 / 修改时间：10:26:50" itemprop="dateCreated datePublished" datetime="2019-11-11T09:36:27+08:00">2019-11-11</time>
+              <time title="创建时间：2019-11-11 09:36:27" itemprop="dateCreated datePublished" datetime="2019-11-11T09:36:27+08:00">2019-11-11</time>
             </span>
 
           
@@ -305,13 +304,6 @@
 
               <time title="创建时间：2019-11-09 16:50:51" itemprop="dateCreated datePublished" datetime="2019-11-09T16:50:51+08:00">2019-11-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-11 10:30:16" itemprop="dateModified" datetime="2019-11-11T10:30:16+08:00">2019-11-11</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -389,13 +381,6 @@
 
               <time title="创建时间：2019-11-08 20:50:51" itemprop="dateCreated datePublished" datetime="2019-11-08T20:50:51+08:00">2019-11-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-11 10:27:36" itemprop="dateModified" datetime="2019-11-11T10:27:36+08:00">2019-11-11</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -472,13 +457,6 @@
 
               <time title="创建时间：2019-11-08 17:50:51" itemprop="dateCreated datePublished" datetime="2019-11-08T17:50:51+08:00">2019-11-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-09 16:28:56" itemprop="dateModified" datetime="2019-11-09T16:28:56+08:00">2019-11-09</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -502,63 +480,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<ol>
-<li><p>下载Python二进制文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">下载地址：https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz</span><br><span class="line">linux系统下载: wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将二进制文件上传到要安装服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SSH软件上传</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装–以下步骤都在要安装的服务器上操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. tar -zxvf Python-3.7.4.tgz # 解压安装包</span><br><span class="line">2. cd ./Python-3.7.4  # 进入解压后的目录</span><br><span class="line">3. ./configure --prefix=/usr/local/my_python_path #初始配置，--prefix指定安装目录</span><br><span class="line">4. make &amp;&amp; make install  # 编译源码 + 程序安装</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装完成，配置环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 建立软连接到系统环境变量</span><br><span class="line">	ln -s /usr/local/my_python_path/bin/python3 /usr/bin/python3 </span><br><span class="line">2. pip 建立</span><br><span class="line">	ln -s /usr/local/my_python_path/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. python3 -V # 验证python3</span><br><span class="line">2. pip3 -V # 验证pip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新pip(非必须)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># python自带pip可能不是最新，可以更新</span><br><span class="line">pip3 install --upgrade pip</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</blockquote>
-<h3 id="开启虚拟环境-非必须"><a href="#开启虚拟环境-非必须" class="headerlink" title="开启虚拟环境(非必须)"></a>开启虚拟环境(非必须)</h3><blockquote>
-<p>虚拟环境是指针对部署项目的一个单独的python环境（依赖包归该虚拟环境所有），其他项目的依赖不会对其产生影响。</p>
-<p>虚拟环境不是必须的，只有在多个python项目运行，且互相依赖的相同依赖包版本不一致时，才是必须的。</p>
-<ol>
-<li><p>初始化虚拟环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 进入想要生成虚拟环境的目录下 比如 ~/apps/model</span><br><span class="line"># 其中第一个venv是python生成虚拟环境的命令</span><br><span class="line"># 第二个venv是虚拟环境存放的目录，可以修改成其他名字，比如venv-model</span><br><span class="line">python3 -m venv venv</span><br><span class="line">python3 -m venv venv-model</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>激活虚拟环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 激活虚拟环境--linux系统</span><br><span class="line">source venv/bin/activate</span><br><span class="line"># 激活虚拟环境--windows系统</span><br><span class="line">venv/Scripts/activate.bat</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>退出虚拟环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在当前虚拟环境下，运行</span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>虚拟环境生成后，就是一个python的运行环境，操作与在系统中一样。</p>
-</blockquote>
-<h3 id="依赖包安装"><a href="#依赖包安装" class="headerlink" title="依赖包安装"></a>依赖包安装</h3><hr>
-<p>如果是在虚拟环境中运行项目，请激活虚拟环境后，在虚拟环境下操作，反之在当前系统下操作即可。</p>
-<h4 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h4><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> # 安装依赖包 -r 指定依赖文件</span><br><span class="line">1. pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="离线安装"><a href="#离线安装" class="headerlink" title="离线安装"></a>离线安装</h4><blockquote>
-<ol>
-<li><p>备份依赖包—可上网的开发环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 备份依赖关系</span><br><span class="line">1. pip3 freeze &gt; requirement.txt</span><br><span class="line"># 在线下载依赖包到指定目录</span><br><span class="line">2. pip3 download -d pack_directory -r requirements.txt</span><br><span class="line">	-d 指定依赖包保存目录</span><br><span class="line">	-r 指定依赖包汇总文件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>还原依赖包—离线服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 安装依赖包</span><br><span class="line">1. pip3 install --no-index --find-links=pack_directory -r requirements.txt</span><br><span class="line"> --no-index 禁止去网络下载</span><br><span class="line"> --find-links 指定去哪里寻找安装包，这里是安装包文件夹</span><br><span class="line"> -r 指定依赖包文件</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</blockquote>
-
+          <p>本文介绍了Python环境的安装， 以及依赖包的在线和离线状态下的下载与更新。同时对虚拟环境的开启做了简单介绍。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/08/python/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
